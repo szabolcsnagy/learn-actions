@@ -11,6 +11,16 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-      # refering to the input parameters are workflow dispatch
+      # refering to the input parameters at workflow dispatch
       - run: |
           echo "Hello ${{ github.event.inputs.name }}"
+
+      # say hello with JS action
+      - name: "Checkout my action from this repository"
+        uses: actions/checkout@v2
+      - name: "Installing node dependencies"
+        run: yarn install
+      - name: "Greeting with my-action"
+        uses: ./.github/actions/my-action
+        with:
+          who-to-greet: ${{ github.event.inputs.name }}

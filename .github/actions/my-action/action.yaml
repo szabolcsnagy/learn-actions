@@ -1,0 +1,14 @@
+name: "Hello World"
+description: "My custom action that runs the my-action.js file from this repo."
+inputs:
+  who-to-greet: # id of the input
+    description: "Who to greet"
+    required: true
+    default: "World"
+
+outputs:
+  time:
+    description: "The time we greeted you"
+runs:
+  using: "node12"
+  main: "../../../my-action.js"

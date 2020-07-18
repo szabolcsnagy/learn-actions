@@ -1,0 +1,12 @@
+{
+  "name": "learn-actions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/szabolcsnagy/learn-actions",
+  "author": "Szabolcs Nagy <1876846+szabolcsnagy@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^4.0.0"
+  }
+}
