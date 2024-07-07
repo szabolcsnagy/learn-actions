@@ -17,9 +17,9 @@ jobs:
 
       # say hello with JS action
       - name: "Checkout my action from this repository"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: "Installing node dependencies"
-        run: yarn install
+        run: npm install
       - name: "Greeting with my-action"
         uses: ./.github/actions/my-action
         with:
