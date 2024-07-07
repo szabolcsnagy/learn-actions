@@ -21,6 +21,11 @@ jobs:
       - name: "Installing node dependencies"
         run: npm install
       - name: "Greeting with my-action"
+        # assign id that is referenced in the next step
+        id: hello
         uses: ./.github/actions/my-action
         with:
           who-to-greet: ${{ github.event.inputs.name }}
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
